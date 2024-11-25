@@ -4,7 +4,10 @@
         "commitlint",
         "Instantiator",
         "janmarshal",
+        "rainbo",
         "Shadcn",
-        "turbopack"
+        "sonner",
+        "turbopack",
+        "vercel"
     ]
 }
