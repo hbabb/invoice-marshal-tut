@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Invoice Platform Tutorial Project
 
-## Getting Started
+[![Tutorial Video](https://img.shields.io/badge/Watch-Tutorial-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=AH3xlNuui_A)
+[![Course Link](https://img.shields.io/badge/View-Course-blue?style=for-the-badge&logo=vercel)](https://janmarshal.com/courses/create-a-invoice-platform-using-next-js-mailtrap-auth-js-tailwind-2024)
 
-First, run the development server:
+A comprehensive tutorial for building a full-stack Invoice Platform from scratch using modern web technologies. Learn how to create a professional-grade application with features like invoice management, email notifications, PDF generation, and more.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Course Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In this extensive 10.4-hour tutorial, you'll learn to build a complete Invoice Platform with authentication, email capabilities, and a beautiful dashboard. This course is designed for advanced developers looking to enhance their full-stack development skills.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **🌐 Next.js App Router** - Latest routing and rendering capabilities
+- **📧 Mailtrap Integration** - Professional email handling
+- **💪 Complete Invoice Management**
+  - Create and edit invoices
+  - Mark invoices as paid
+  - Track invoice status
+- **🚀 Email Functionality**
+  - Beautiful email templates
+  - Automated reminder system
+  - Client communication
+- **🔒 Advanced Authentication**
+  - Custom Auth.js implementation
+  - Magic Link authentication via Mailtrap
+- **📃 Document Generation**
+  - Custom PDF generation
+  - Professional invoice templates
+- **🏎️ Modern Dashboard**
+  - Animated charts and statistics
+  - Real-time updates
+  - Responsive design
 
-## Learn More
+## 🛠️ Technology Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend:**
+  - Next.js
+  - Tailwind CSS
+  - Shadcn/UI
+  - Conform for forms
+  
+- **Backend:**
+  - Neon Postgres Database
+  - Prisma ORM
+  - Auth.js
+  - Mailtrap API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Validation & Security:**
+  - Zod
+  - Server-side validation
+  
+- **Deployment:**
+  - Vercel platform
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📚 Course Information
 
-## Deploy on Vercel
+- **Level:** Advanced
+- **Duration:** 10.4 hours
+- **Language:** English
+- **Price:** Free
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/ski043/InvoiceMarshal
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+3. Set up environment variables:
+
+    ```bash
+    cp .env.example .env.local
+    ```
+
+4. Set up your database and update the environment variables with your credentials.
+
+5. Run the development server:
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
+
+## 🌟 What You'll Learn
+
+- Building a production-ready invoice management system
+- Implementing secure authentication flows
+- Creating and managing database schemas with Prisma
+- Designing responsive UI with Tailwind CSS and Shadcn/UI
+- Handling email communications professionally
+- Generating and managing PDF documents
+- Deploying a full-stack application to Vercel
+
+## 🔗 Useful Links
+
+- [Course Website](https://janmarshal.com/courses/create-a-invoice-platform-using-next-js-mailtrap-auth-js-tailwind-2024)
+- [YouTube Tutorial](https://www.youtube.com/watch?v=AH3xlNuui_A)
+- [Original Repository](https://github.com/ski043/InvoiceMarshal)
+- [Tutorial Repository](https://github.com/hbabb/invoice-marshal-tut)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ski043/InvoiceMarshal/issues).
+
+## 👨‍💻 Author: **Jan Marshal**
+
+- Website: [janmarshal.com](https://janmarshal.com)
