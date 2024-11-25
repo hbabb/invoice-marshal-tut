@@ -12,7 +12,7 @@ export default function NotFound() {
   return (
     <div className="flex h-screen flex-col items-center justify-center bg-black">
       <main className="flex flex-row items-center justify-evenly">
-        <div className="mr-96 text-left text-notfound-white">
+        <div className="mr-96 text-left text-white">
           <h1 className="text-inter text-[200px] font-bold">Oops !</h1>
           <h3 className="text-inter text-[44px] font-bold">something went wrong...</h3>
           <p className="text-inter mb-52 text-[23px] font-normal text-notfound-gray">
