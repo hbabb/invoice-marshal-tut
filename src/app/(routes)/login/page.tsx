@@ -1,13 +1,7 @@
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
+import { SubmitButton } from "@/components/SubmitButton";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { SubmitButton } from "@/components/SubmitButton";
 import { auth, signIn } from "@/utils/auth";
 import { redirect } from "next/navigation";
 
@@ -36,12 +30,7 @@ export default async function Login() {
             >
               <div className="flex flex-col gap-y-2">
                 <Label>Email</Label>
-                <Input
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                />
+                <Input name="email" type="email" required placeholder="Enter your email" />
               </div>
               <SubmitButton text="Login" />
             </form>

@@ -1,12 +1,5 @@
-import { ReactNode } from "react";
-import { requireUser } from "@/utils/hooks";
-import Link from "next/link";
-import Logo from "../../../../public/images/logo.svg";
-import Image from "next/image";
 import { DashboardLinks } from "@/components/DashboardLinks";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, User2 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,10 +8,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Toaster } from "@/components/ui/sonner";
 import { signOut } from "@/utils/auth";
 import prisma from "@/utils/db";
+import { requireUser } from "@/utils/hooks";
+import { Menu, User2 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Toaster } from "@/components/ui/sonner";
+import type { ReactNode } from "react";
+import Logo from "../../../../public/images/logo.svg";
 
 async function getUser(userId: string) {
   const data = await prisma.user.findUnique({
@@ -43,22 +43,22 @@ export default async function DashboardLayout({
   children: ReactNode;
 }) {
   const session = await requireUser();
-  const data = await getUser(session.user?.id as string);
+  const _data = await getUser(session.user?.id as string);
   return (
     <>
-      <div className="grid min-h-screen w-full md:gird-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      <div className="md:gird-cols-[220px_1fr] grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
         <div className="hidden border-r bg-muted/40 md:block">
-          <div className="flex flex-col max-h-screen h-full gap-2">
-            <div className="h-14 flex items-center border-b px-4 lg:h-[60px] lg:px-6">
+          <div className="flex h-full max-h-screen flex-col gap-2">
+            <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
               <Link href="/" className="flex items-center gap-2">
                 <Image src={Logo} alt="Logo" className="size-7" />
-                <p className="text-2xl font-bold">
+                <p className="font-bold text-2xl">
                   Invoice<span className="text-blue-600">Marshal</span>
                 </p>
               </Link>
             </div>
             <div className="flex-1">
-              <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+              <nav className="grid items-start px-2 font-medium text-sm lg:px-4">
                 <DashboardLinks />
               </nav>
             </div>
@@ -74,20 +74,16 @@ export default async function DashboardLayout({
                 </Button>
               </SheetTrigger>
               <SheetContent side="left">
-                <nav className="grid gap-2 mt-10">
+                <nav className="mt-10 grid gap-2">
                   <DashboardLinks />
                 </nav>
               </SheetContent>
             </Sheet>
 
-            <div className="flex items-center ml-auto">
+            <div className="ml-auto flex items-center">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button
-                    className="rounded-full"
-                    variant="outline"
-                    size="icon"
-                  >
+                  <Button className="rounded-full" variant="outline" size="icon">
                     <User2 />
                   </Button>
                 </DropdownMenuTrigger>
@@ -109,6 +105,7 @@ export default async function DashboardLayout({
                         await signOut();
                       }}
                     >
+                      {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
                       <button className="w-full text-left">Log out</button>
                     </form>
                   </DropdownMenuItem>
@@ -116,9 +113,7 @@ export default async function DashboardLayout({
               </DropdownMenu>
             </div>
           </header>
-          <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-            {children}
-          </main>
+          <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">{children}</main>
         </div>
       </div>
       <Toaster richColors closeButton theme="light" />
