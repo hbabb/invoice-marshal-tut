@@ -49,7 +49,9 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         ...classNames,
       }}
       components={{
+        // biome-ignore lint/correctness/noUnusedVariables: <explanation>
         IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
+        // biome-ignore lint/correctness/noUnusedVariables: <explanation>
         IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
       }}
       {...props}
