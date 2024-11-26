@@ -1,14 +1,14 @@
 "use server";
 
-import { requireUser } from "@/utils/hooks";
-import { parseWithZod } from "@conform-to/zod";
 import { invoiceSchema, onboardingSchema } from "@/lib/schemas/zodSchemas";
 import prisma from "@/utils/db";
-import { redirect } from "next/navigation";
-import { emailClient } from "@/utils/mailtrap";
 import { formatCurrency } from "@/utils/formatCurrency";
+import { requireUser } from "@/utils/hooks";
+import { emailClient } from "@/utils/mailtrap";
+import { parseWithZod } from "@conform-to/zod";
+import { redirect } from "next/navigation";
 
-export async function onboardUser(prevState: any, formData: FormData) {
+export async function onboardUser(_prevState: any, formData: FormData) {
   const session = await requireUser();
 
   const submission = parseWithZod(formData, {
@@ -19,7 +19,7 @@ export async function onboardUser(prevState: any, formData: FormData) {
     return submission.reply();
   }
 
-  const data = await prisma.user.update({
+  const _data = await prisma.user.update({
     where: {
       id: session.user?.id,
     },
@@ -33,7 +33,7 @@ export async function onboardUser(prevState: any, formData: FormData) {
   return redirect("/dashboard");
 }
 
-export async function createInvoice(prevState: any, formData: FormData) {
+export async function createInvoice(_prevState: any, formData: FormData) {
   const session = await requireUser();
 
   const submission = parseWithZod(formData, {
@@ -96,7 +96,7 @@ export async function createInvoice(prevState: any, formData: FormData) {
   return redirect("/dashboard/invoices");
 }
 
-export async function editInvoice(prevState: any, formData: FormData) {
+export async function editInvoice(_prevState: any, formData: FormData) {
   const session = await requireUser();
 
   const submission = parseWithZod(formData, {
@@ -165,7 +165,7 @@ export async function editInvoice(prevState: any, formData: FormData) {
 export async function DeleteInvoice(invoiceId: string) {
   const session = await requireUser();
 
-  const data = await prisma.invoice.delete({
+  const _data = await prisma.invoice.delete({
     where: {
       userId: session.user?.id,
       id: invoiceId,
@@ -178,7 +178,7 @@ export async function DeleteInvoice(invoiceId: string) {
 export async function MarkAsPaidAction(invoiceId: string) {
   const session = await requireUser();
 
-  const data = await prisma.invoice.update({
+  const _data = await prisma.invoice.update({
     where: {
       userId: session.user?.id,
       id: invoiceId,
