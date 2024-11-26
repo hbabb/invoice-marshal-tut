@@ -8,6 +8,7 @@ import { emailClient } from "@/utils/mailtrap";
 import { parseWithZod } from "@conform-to/zod";
 import { redirect } from "next/navigation";
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export async function onboardUser(_prevState: any, formData: FormData) {
   const session = await requireUser();
 
@@ -33,6 +34,7 @@ export async function onboardUser(_prevState: any, formData: FormData) {
   return redirect("/dashboard");
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export async function createInvoice(_prevState: any, formData: FormData) {
   const session = await requireUser();
 
@@ -84,6 +86,7 @@ export async function createInvoice(_prevState: any, formData: FormData) {
       }).format(new Date(submission.value.date)),
       invoiceAmount: formatCurrency({
         amount: submission.value.total,
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         currency: submission.value.currency as any,
       }),
       invoiceLink:
@@ -96,6 +99,7 @@ export async function createInvoice(_prevState: any, formData: FormData) {
   return redirect("/dashboard/invoices");
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export async function editInvoice(_prevState: any, formData: FormData) {
   const session = await requireUser();
 
@@ -150,6 +154,7 @@ export async function editInvoice(_prevState: any, formData: FormData) {
       }).format(new Date(submission.value.date)),
       invoiceAmount: formatCurrency({
         amount: submission.value.total,
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         currency: submission.value.currency as any,
       }),
       invoiceLink:
