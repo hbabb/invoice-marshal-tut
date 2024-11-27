@@ -1,7 +1,11 @@
+import { Hero } from "@/components/Hero";
+import { Navbar } from "@/components/Navbar";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="font-bold text-4xl">Index Main Landing Page</h1>
+    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Navbar />
+      <Hero />
     </main>
   );
 }

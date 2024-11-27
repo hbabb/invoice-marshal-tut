@@ -1,3 +1,4 @@
+import Logo from "@/assets/images/logo.svg";
 import { DashboardLinks } from "@/components/DashboardLinks";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +19,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { ReactNode } from "react";
-import Logo from "../../../../public/images/logo.svg";
 
 async function getUser(userId: string) {
   const data = await prisma.user.findUnique({
